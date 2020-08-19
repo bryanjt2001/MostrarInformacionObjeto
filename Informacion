@@ -1,0 +1,141 @@
+#GIT BRANCH
+C:\Users\Bryan Jácome Tumbaco\Desktop\Nueva carpeta\proyectorama>git branch
+  intento
+* master
+  pruebas
+  ramanuevaV2
+  
+ #GIT LOG --ONELINE
+C:\Users\Bryan Jácome Tumbaco\Desktop\Nueva carpeta\proyectorama>git log --oneline
+1c2ce67 (HEAD -> master) Resuelvo el conflico ded fusion
+d584e05 Merge branch 'intento' into master
+96ee459 (intento) Cambio en la rama intento
+dadae86 Cambio en la rama master
+eb62a91 A<C3><B1>ado un nuevo texto
+ca46e6d (pruebas) Introduzco una linea en el Archivo1
+a9277fe A<C3><B1>ado el archivo2
+8946784 A<C3><B1>ado el archivo1
+
+#GIT SHOW HEAD
+C:\Users\Bryan Jácome Tumbaco\Desktop\Nueva carpeta\proyectorama>git show HEAD
+commit 1c2ce6774b1078ec18cdfef385d31cfb40096f28 (HEAD -> master)
+Merge: d584e05 ca46e6d
+Author: bryanjt2001 <bryanjacob01@hotmail.com>
+Date:   Tue Aug 18 18:17:49 2020 -0500
+
+    Resuelvo el conflico ded fusion
+
+diff --cc Archivo1.txt
+index 342b7d6,f74bb05..67286e8
+--- a/Archivo1.txt
++++ b/Archivo1.txt
+@@@ -1,2 -1,1 +1,6 @@@
+ -Inserto una l<C3><AD>nea en el archivo
+++
+ +Inserto una l<C3><AD>nea en el archivo
+- Cambio en la rama master
+++Cambio en la rama master
+++Inserto una l<C3><AD>nea en el archivo
+++Resuelvo el conflicto de fusion eliminando las lineas que las delimitaba.
+++
+
+#git show --format=oneline HEAD
+C:\Users\Bryan Jácome Tumbaco\Desktop\Nueva carpeta\proyectorama>git show --oneline HEAD
+1c2ce67 (HEAD -> master) Resuelvo el conflico ded fusion
+
+diff --cc Archivo1.txt
+index 342b7d6,f74bb05..67286e8
+--- a/Archivo1.txt
++++ b/Archivo1.txt
+@@@ -1,2 -1,1 +1,6 @@@
+ -Inserto una l<C3><AD>nea en el archivo
+++
+ +Inserto una l<C3><AD>nea en el archivo
+- Cambio en la rama master
+++Cambio en la rama master
+++Inserto una l<C3><AD>nea en el archivo
+++Resuelvo el conflicto de fusion eliminando las lineas que las delimitaba.
+
+#git show --oneline HEAD
+C:\Users\Bryan Jácome Tumbaco\Desktop\Nueva carpeta\proyectorama>git show --oneline HEAD
+1c2ce67 (HEAD -> master) Resuelvo el conflico ded fusion
+diff --cc Archivo1.txt
+index 342b7d6,f74bb05..67286e8
+--- a/Archivo1.txt
++++ b/Archivo1.txt
+@@@ -1,2 -1,1 +1,6 @@@
+ -Inserto una l<C3><AD>nea en el archivo
+++
+ +Inserto una l<C3><AD>nea en el archivo
+- Cambio en la rama master
+++Cambio en la rama master
+++Inserto una l<C3><AD>nea en el archivo
+++Resuelvo el conflicto de fusion eliminando las lineas que las delimitaba.
+++
+#git show --oneline HEAD^
+C:\Users\Bryan Jácome Tumbaco\Desktop\Nueva carpeta\proyectorama>git show --oneline HEAD^
+¿Más?
+
+#git show --oneline HEAD^^
+C:\Users\Bryan Jácome Tumbaco\Desktop\Nueva carpeta\proyectorama>git show --oneline HEAD^^
+d584e05 Merge branch 'intento' into master
+
+#git show --oneline HEAD~2
+
+C:\Users\Bryan Jácome Tumbaco\Desktop\Nueva carpeta\proyectorama>git show --oneline HEAD~2
+dadae86 Cambio en la rama master
+diff --git a/Archivo1.txt b/Archivo1.txt
+index f74bb05..342b7d6 100644
+--- a/Archivo1.txt
++++ b/Archivo1.txt
+@@ -1 +1,2 @@
+-Inserto una l<C3><AD>nea en el archivo
+\ No newline at end of file
++Inserto una l<C3><AD>nea en el archivo
++Cambio en la rama master
+\ No newline at end of file
+
+#git show --oneline HEAD~6
+C:\Users\Bryan Jácome Tumbaco\Desktop\Nueva carpeta\proyectorama>git show --oneline HEAD -6
+1c2ce67 (HEAD -> master) Resuelvo el conflico ded fusion
+diff --cc Archivo1.txt
+index 342b7d6,f74bb05..67286e8
+--- a/Archivo1.txt
++++ b/Archivo1.txt
+@@@ -1,2 -1,1 +1,6 @@@
+ -Inserto una l<C3><AD>nea en el archivo
+++
+ +Inserto una l<C3><AD>nea en el archivo
+- Cambio en la rama master
+++Cambio en la rama master
+++Inserto una l<C3><AD>nea en el archivo
+++Resuelvo el conflicto de fusion eliminando las lineas que las delimitaba.
+++
+d584e05 Merge branch 'intento' into master
+
+96ee459 (intento) Cambio en la rama intento
+diff --git a/Archivo2.txt b/Archivo2.txt
+index e69de29..6a2b4f5 100644
+--- a/Archivo2.txt
++++ b/Archivo2.txt
+@@ -0,0 +1 @@
++Cambio en la rama intento
+\ No newline at end of file
+dadae86 Cambio en la rama master
+diff --git a/Archivo1.txt b/Archivo1.txt
+index f74bb05..342b7d6 100644
+--- a/Archivo1.txt
+:
+#git show --oneline HEAD~5
+C:\Users\Bryan Jácome Tumbaco\Desktop\Nueva carpeta\proyectorama>git show --oneline HEAD~5
+8946784 A<C3><B1>ado el archivo1
+diff --git a/Archivo1.txt b/Archivo1.txt
+new file mode 100644
+index 0000000..e69de29
+
+#git show --oneline $SHA1_commit
+C:\Users\Bryan Jácome Tumbaco\Desktop\Nueva carpeta\proyectorama>git show --oneline $SHA1_commit
+fatal: ambiguous argument '$SHA1_commit': unknown revision or path not in the working tree.
+Use '--' to separate paths from revisions, like this:
+'git <command> [<revision>...] -- [<file>...]'
+
